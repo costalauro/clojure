@@ -23,20 +23,20 @@
 ;     (pprint nome))
 
 (defn testa-atomao []
-  (let [hospital-silveira (atom {:espera h.model/fila_vazia})]
+  (let [hospital-silveira (atom {:espera h.model/fila-vazia})]
     (pprint hospital-silveira)
     (pprint (deref hospital-silveira))
     (pprint @hospital-silveira)
 
     ;não é assim que eu altero o conteúdo dentro de um atomo
-    (pprint (assoc @hospital-silveira :laboratorio1 h.model/fila_vazia))
+    (pprint (assoc @hospital-silveira :laboratorio1 h.model/fila-vazia))
     (pprint @hospital-silveira)
 
     ;essa eh (uma das) a maneira de alterar conteudo dentro de um atomo
-    (swap! hospital-silveira assoc :laboratorio1 h.model/fila_vazia)
+    (swap! hospital-silveira assoc :laboratorio1 h.model/fila-vazia)
     (pprint @hospital-silveira)
 
-    (swap! hospital-silveira assoc :laboratorio2 h.model/fila_vazia)
+    (swap! hospital-silveira assoc :laboratorio2 h.model/fila-vazia)
     (pprint @hospital-silveira)
 
     ; update tradicional imutavel, com dereferencia, que nao trata efeito

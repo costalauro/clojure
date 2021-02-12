@@ -10,5 +10,3 @@
 
 (let [hospital-do-lauro (h.model/novo-hospital)]
   (pprint hospital-do-lauro))
-
-(pprint )
