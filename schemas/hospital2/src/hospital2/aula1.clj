@@ -11,8 +11,8 @@
 ; {15 [], 20 [], 25 [] }
 (defn adiciona-visita
   [visitas, paciente novas-visitas]
-  (if (contains? visitas paciente
-                 update visitas paciente concat novas-visitas)
+  (if (contains? visitas paciente)
+    (update visitas paciente concat novas-visitas)
     (assoc visitas paciente novas-visitas)))
 
 (defn imprime-relatorio-de-paciente [visitas, paciente]
@@ -24,7 +24,7 @@
         matheus {:id 25 :nome "Matheus"}
 
         ; uma variação com reduce, mais natural
-        pacientes (reduce adiciona-paciente {} [ lauro amanda matheus])
+        pacientes (reduce adiciona-paciente {} [lauro amanda matheus])
 
         ;variação com shadowing, fica feio
         visitas {}
@@ -39,4 +39,26 @@
     (imprime-relatorio-de-paciente visitas lauro)
     (println (get visitas 20))))
 
+;(testa-uso-de-pacientes)
+
+(pprint (s/validate Long 15))
+;(pprint (s/validate Long  "lauro"))
+;(pprint (s/validate Long  [15,13]))
+
+(s/set-fn-validation! true)
+
+
+(s/defn teste-simples
+  [x :- Long]
+  (println x))
+
+(teste-simples 30)
+;(teste-simples "lauro")
+
+(s/defn imprime-relatorio-de-paciente
+  [visitas, paciente :- Long]
+  (println "Visitas do paciente" paciente "são" (get visitas paciente)))
+
+;agora deu erro em tempo de execucao que diz
+; que o valor passado como param nao condiz com o schema Long
 (testa-uso-de-pacientes)
