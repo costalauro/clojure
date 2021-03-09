@@ -77,7 +77,7 @@
 ;  "Schema de um paciente"
 ;  {:id (s/constrained s/Int #(> % 0) 'inteiro-estritamente-positivo),
 ;   :nome s/Str})
-;
+
 ;(pprint (s/validate Paciente {:id 15, :nome "lauro"}))
 ;(pprint (s/validate Paciente {:id -15, :nome "lauro"}))
 ;(pprint (s/validate Paciente {:id 0, :nome "lauro"}))
