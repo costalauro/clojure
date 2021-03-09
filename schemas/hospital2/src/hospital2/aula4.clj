@@ -35,5 +35,9 @@
   ;(pprint (s/validate Pacientes {15 {:id 15, :nome "Lauro"}}))
   )
 
+(def Visitas
+  {PosInt [s/Str]})
+
+
 
 
