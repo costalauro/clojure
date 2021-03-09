@@ -41,18 +41,18 @@
 
 ;(testa-uso-de-pacientes)
 
-(pprint (s/validate Long 15))
+;(pprint (s/validate Long 15))
 ;(pprint (s/validate Long  "lauro"))
 ;(pprint (s/validate Long  [15,13]))
 
 (s/set-fn-validation! true)
 
 
-(s/defn teste-simples
-  [x :- Long]
-  (println x))
+;(s/defn teste-simples
+;  [x :- Long]
+;  (println x))
 
-(teste-simples 30)
+;(teste-simples 30)
 ;(teste-simples "lauro")
 
 (s/defn imprime-relatorio-de-paciente
@@ -61,4 +61,12 @@
 
 ;agora deu erro em tempo de execucao que diz
 ; que o valor passado como param nao condiz com o schema Long
-(testa-uso-de-pacientes)
+;(testa-uso-de-pacientes)
+
+
+(s/defn novo-paciente
+  [id :- Long, nome :- s/Str]
+  {:id id, :nome nome})
+
+(pprint (novo-paciente 15 "Lauro"))
+;(pprint (novo-paciente "Lauro" 15))
