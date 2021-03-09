@@ -27,7 +27,8 @@
 ; se a validacao estiver ativar :)
 (s/defn adiciona-paciente :- Pacientes
   [pacientes :- Pacientes, paciente :- Paciente]
-  (assoc pacientes id paciente))
+  (let [id (:id paciente)]
+   (assoc pacientes id paciente)))
 
 (s/defn adiciona-visita :- Visitas
   [visitas :- Visitas, paciente :- PosInt, novas-visitas :- [s/Str]]
