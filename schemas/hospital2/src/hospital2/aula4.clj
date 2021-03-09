@@ -7,7 +7,7 @@
 (def PosInt (s/pred pos-int? 'inteiro-positivo))
 (def Plano [s/Keyword])
 (def Paciente
-  {:idPosInt,
+  {:id                          PosInt,
    :nome                        s/Str,
    :plano                       Plano
    (s/optional-key :nascimento) s/Str})
@@ -18,9 +18,22 @@
 (pprint (s/validate Paciente {:id 15, :nome "lauro", :plano nil}))
 (pprint (s/validate Paciente {:id 15, :nome "lauro", :plano [], :nascimento "11/03/1996"}))
 
+; esse é um outro tipo de uso de mapas no mundo real
+; Pacientes
+; { 15 {paciente} 23 {paciente}}
+(def Pacientes
+  {PosInt Paciente})
 
+(pprint (s/validate Pacientes {}))
 
-
+(let [lauro {:id 15, :nome "lauro", :plano [:raio-x, :ultrasom]}
+      amanda {:id 20, :nome "amanda", :plano []}]
+  (pprint (s/validate Pacientes {15 lauro}))
+  (pprint (s/validate Pacientes {15 lauro, 20 amanda}))
+  ;(pprint (s/validate Pacientes {-15 lauro}))
+  ;(pprint (s/validate Pacientes {15 15}))
+  ;(pprint (s/validate Pacientes {15 {:id 15, :nome "Lauro"}}))
+  )
 
 
 
