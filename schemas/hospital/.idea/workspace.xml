@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ecb913cf-664e-4990-b098-b4a746ee59de" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/hospital.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hospital/aula1.clj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project.clj" beforeDir="false" afterPath="$PROJECT_DIR$/project.clj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hospital/aula1.clj" beforeDir="false" afterPath="$PROJECT_DIR$/src/hospital/aula1.clj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,8 +33,8 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="cursive.last.file.extension./home/lauro/workspace/clojure/schemas/hospital/src" value="clj" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="ClojureREPL" factoryName="Local" activateToolWindowBeforeRun="false">
@@ -66,7 +67,7 @@
       <setting name="aliases" value="" />
       <setting name="vmparams" value="" />
       <setting name="params" value="" />
-      <setting name="workDir" value="$PROJECT_DIR$/src/hospital" />
+      <setting name="workDir" value="$PROJECT_DIR$" />
       <method v="2" />
     </configuration>
     <recent_temporary>
@@ -96,5 +97,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

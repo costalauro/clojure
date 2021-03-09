@@ -1,6 +1,6 @@
-(ns hospital.aula1
+(ns hospital2.aula1
   (:use clojure.pprint)
-    (:require [schema.core :as s]))
+  (:require [schema.core :as s]))
 
 (defn adiciona-paciente
   [pacientes paciente]
@@ -11,8 +11,8 @@
 ; {15 [], 20 [], 25 [] }
 (defn adiciona-visita
   [visitas, paciente novas-visitas]
-  (if (contains? visitas paciente)
-    (update visitas paciente concat novas-visitas)
+  (if (contains? visitas paciente
+                 update visitas paciente concat novas-visitas)
     (assoc visitas paciente novas-visitas)))
 
 (defn imprime-relatorio-de-paciente [visitas, paciente]
