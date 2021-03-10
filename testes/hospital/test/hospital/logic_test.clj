@@ -43,6 +43,27 @@
     (is (= {:espera [1, 2, 3, 4, 5]}
            (chega-em {:espera [1, 2, 3, 4]}, :espera, 5)))
 
-    ;teste não sequencia
+    ;teste não sequencial
     (is (= {:espera [1, 2, 5]}
-           (chega-em {:espera [1, 2]}, :espera, 5)))))
+           (chega-em {:espera [1, 2]}, :espera, 5))))
+
+  (testing "não aceita quando não cabe na fila"
+    ; verificando que uma excpetion foi jogada
+    ; código clássico horrível, usamos uma exception generica
+    ; qualquer outro erro mostra esse exception, e vamos achar que deu certo
+    ; quando deu errado
+    ;(is (thrown? clojure.lang.ExceptionInfo
+    ;      (chega-em {:espera [1 35 42 64 21]}, :espera 76)))
+
+    ;(is (thrown-with-msg? clojure.lang.ExceptionInfo "não cabe ninguém neste departamento"
+    ;             (chega-em {:espera [1 35 42 64 21]}, :espera 76)))
+
+    ;mesmo que eu escolha um exception do gênero é perigoso
+    ;(is (thrown? IllegalStateException
+    ;             (chega-em {:espera [1 35 42 64 21]}, :espera 76)))
+
+    ;outra abordagem, do nil
+    ;mas o perigo do swap, teremos que trabalhar em outro ponto a condicao de erro
+    ;(is (nil? (chega-em {:espera [1 35 42 64 21]}, :espera 76)))
+    )
+  )
