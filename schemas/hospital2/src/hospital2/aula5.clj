@@ -22,8 +22,8 @@
 ; (pprint (s/validate Paciente {:id 15 :nome "lauro", :plano []}))
 
 
-;removi o IF, removi o THROW pois
-;o schema GARANTIU a existencia do id e a validade do id
+; removi o IF, removi o THROW pois
+; o schema GARANTIU a existencia do id e a validade do id
 ; se a validacao estiver ativar :)
 (s/defn adiciona-paciente :- Pacientes
   [pacientes :- Pacientes, paciente :- Paciente]
