@@ -25,4 +25,6 @@
   (testing "Que cabe na fila quando tem gente mas não está cheia"
     (is (cabe-na-fila? {:espera [1 2 3 4]}, :espera))
     (is (cabe-na-fila? {:espera [1 2]}, :espera)))
-)
+
+  (testing "Que ... quando o departamento não existe"
+    (is (not (cabe-na-fila? {:espera [1 2 3 4]}, :raio-x)))))
