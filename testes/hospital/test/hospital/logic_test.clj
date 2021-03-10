@@ -21,8 +21,8 @@
   (testing "Que não cabe na fila quando tem mais do que uma fila cheia"
     (is (not (cabe-na-fila? {:espera [1 2 3 4 5 6]}, :espera))))
 
-  (testing "Que na fila quando tem pouco menos do que uma fila cheia"
+  (testing "Que cabe na fila quando tem pouco menos do que uma fila cheia"
     (is (cabe-na-fila? {:espera [1 2 3 4]}, :espera)))
 
-  (testing "Que na fila quando tem pouca gente na fila"
+  (testing "Que cabe na fila quando tem pouca gente na fila"
     (is (cabe-na-fila? {:espera [1 2]}, :espera))))
