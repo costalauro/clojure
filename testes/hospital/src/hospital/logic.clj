@@ -26,6 +26,10 @@
 (defn cabe-na-fila?
   [hospital departamento]
   (some-> hospital
-      departamento
-      count
-      (< 5)))
+          departamento
+          count
+          (< 5)))
+
+(defn chega-em
+  [hospital departamento pessoa]
+  (update hospital departamento conj pessoa))

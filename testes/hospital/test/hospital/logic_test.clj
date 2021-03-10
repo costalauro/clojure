@@ -15,7 +15,14 @@
 
   ;borda do limite
   (testing "Que não cabe na fila quando a fila está cheia"
-    (is (not (cabe-na-fila? {:espera [1 2 3 4 5]}, :espera))))
+
+    ; é de simples leitura pois é sequencial
+    ; mas a desvantagem é que podemos errar em fazer coisas sequenciais
+    ;(is (not (cabe-na-fila? {:espera [1 2 3 4 5]}, :espera)))
+
+    ; não precisa ser sequencial e no mundo real não é
+    (is (not (cabe-na-fila? {:espera [1 5 37 54 21]}, :espera)))
+    )
 
   ;one off da borda do limite pra cima
   (testing "Que não cabe na fila quando tem mais do que uma fila cheia"
@@ -26,5 +33,16 @@
     (is (cabe-na-fila? {:espera [1 2 3 4]}, :espera))
     (is (cabe-na-fila? {:espera [1 2]}, :espera)))
 
-  (testing "Que ... quando o departamento não existe"
+  (testing "Que não cabe quando o departamento não existe"
     (is (not (cabe-na-fila? {:espera [1 2 3 4]}, :raio-x)))))
+
+(deftest chega-em-test
+
+  (testing "Aceita pessoas enquanto cabem pessoas na fila"
+
+    (is (= {:espera [1, 2, 3, 4, 5]}
+           (chega-em {:espera [1, 2, 3, 4]}, :espera, 5)))
+
+    ;teste não sequencia
+    (is (= {:espera [1, 2, 5]}
+           (chega-em {:espera [1, 2]}, :espera, 5)))))
